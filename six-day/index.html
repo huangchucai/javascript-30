@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>fetch for ajax</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <form action="" class="search-form">
+    <input type="text" class="search" placeholder="City or State">
+    <ul class="suggestions">
+      <li>Filter for a city</li>
+      <li>or a state</li>
+    </ul>
+  </form>
+  <script>
+    const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+    const cities = [];
+    // 获取数据
+    fetch(endpoint).then((blob) => {
+      return blob.json()
+    }).then((res) => {
+      cities.push(...res);
+    })
+    // 匹配数据
+    function filterLocation(val) {
+      let filterCities = cities.filter((city) => {
+         return city.city.includes(val) || city.state.includes(val);
+      });
+      // 高亮选中的值
+      let reg = new RegExp(val, 'gi');
+      const html = filterCities.map((city) => {
+        let cityName = city.city.replace(reg,`<span class='hl'>${val}</span>`)
+        let stateName = city.state.replace(reg,`<span class='hl'>${val}</span>`)
+        return `<li>
+        <span class="name">${cityName}, ${stateName}</span>
+          <span class="population">${numberWithCommas(city.population)}</span>
+        </li>`
+      }).join('')
+      console.log(html)
+      const ul = document.querySelector('.suggestions');
+      ul.innerHTML = html;
+    }
+
+    // 处理数字
+    function numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+    const input = document.querySelector('.search');
+    input.addEventListener('keyup',(e)=> {
+      filterLocation(e.target.value);
+    })
+  </script>
+</body>
+</html>
