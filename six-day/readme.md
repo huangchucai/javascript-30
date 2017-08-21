@@ -138,6 +138,12 @@ const rate = 1
 "★★★★★☆☆☆☆☆".slice(5-rate,10-rate)
 ```
 
+#### 三、随机颜色
+
+```javascript
+(~~(Math.random()*(1<<24))).toString(16)
+```
+
 [参考链接](https://github.com/jawil/blog/issues/24)
 
 #### 在这个好高骛远的时代，坚持JavaScript原生30天**
