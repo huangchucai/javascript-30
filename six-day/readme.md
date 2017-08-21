@@ -54,7 +54,7 @@
      // 4. 请求是否成功 reponse.ok
      ```
 
-     ![fetch](C:\Users\Z7\Desktop\fetch.png)
+     ![fetch](https://user-images.githubusercontent.com/22970787/29502282-7ac0f83c-8661-11e7-9800-80745559bb99.png)
 
      ```javascript
      // 请求json数据
@@ -75,7 +75,7 @@
 
    * **错误处理：** fetch() 对于错误的处理，除了网络异常，[`fetch()`](https://developer.mozilla.org/zh-CN/docs/Web/API/GlobalFetch/fetch) promise 将会 reject，带上一个 [`TypeError`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/TypeError) 对象，其他的都不会返回一个错误信息，但是我们可以通过`response.ok`或者`response.status`来进行细致的处理
 
-     ![错误提示](C:\Users\Z7\Desktop\错误提示.png)
+     ![default](https://user-images.githubusercontent.com/22970787/29502288-8293cdd2-8661-11e7-9f96-5cfe14f466c3.png)
 
    * Headers()  和 Request() 构造函数可以对请求头和请求参数进行对象的配置
 
@@ -95,7 +95,7 @@
      var myRequest = new Request('flowers.jpg', myInit);
      ```
 
-3.  **合并数组**
+3. **合并数组**
 
    ES6 添加拓展运算符，对于数组的操作可以更加的方便
 
