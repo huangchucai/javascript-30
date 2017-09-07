@@ -144,6 +144,30 @@ const rate = 1
 (~~(Math.random()*(1<<24))).toString(16)
 ```
 
+(~~(Math.random()*(1<<24)))
+
+得到一个0 到 16777216之间的值
+这个构造的其实是一个10进制的颜色值(随机生成数值)，转换成16进制就是,像白色FFFFFF，蓝色0000FF等等。
+
+1.<<符号是"左位移"运算符
+
+2.math.random()
+
+3.~~是由2个~组成,~是位运算 NOT
+
+这行代码并不关心正负值。因此通过两次取返就可以得到纯整数部，我们还可以将~~视为parseInt的简写：
+
+```javascript
+var a = 12.34, // ~~a = 12
+    b = -1231.8754, // ~~b = -1231
+    c = 3213.000001 // ~~c = 3213
+;
+
+~~a == parseInt(a, 10); // true
+~~b == parseInt(b, 10); // true
+~~c == parseInt(c, 10); // true
+```
+
 [参考链接](https://github.com/jawil/blog/issues/24)
 
 #### 在这个好高骛远的时代，坚持JavaScript原生30天**
