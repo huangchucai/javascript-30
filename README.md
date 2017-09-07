@@ -5,6 +5,7 @@
 4. [数组常用api](https://huangchucai.github.io/javascript-30/four-day/)
 5. [flex图片特效](https://huangchucai.github.io/javascript-30/five-day/)
 6. [获取数据fetch](https://huangchucai.github.io/javascript-30/six-day/)
+7. [canvas画图](https://huangchucai.github.io/javascript-30/six-day/)
 
 
 # 知识点 
@@ -14,5 +15,6 @@
 4. [数组常用api](https://github.com/huangchucai/javascript-30/tree/master/four-day/)
 5. [flex图片特效](https://github.com/huangchucai/javascript-30/tree/master/five-day/)
 6. [获取数据fetch](https://github.com/huangchucai/javascript-30/tree/master/six-day/)
+7. [canvas画图](https://github.com/huangchucai/javascript-30/tree/master/seven-day/)
 
 
